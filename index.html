@@ -7,84 +7,106 @@
 
 <style>
 body{
-    font-family: Arial, sans-serif;
     margin:0;
+    font-family: Arial, sans-serif;
     background:#f4f4f4;
-    color:#333;
 }
 
-header{
-    background:#0b6b32;
+.hero{
+    background:#0b3d0b;
     color:white;
     text-align:center;
-    padding:50px 20px;
+    padding:60px 20px;
 }
 
-section{
+.hero h1{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-weight:normal;
+}
+
+.section{
     max-width:1200px;
-    margin:20px auto;
-    padding:20px;
+    margin:auto;
+    padding:30px;
 }
 
-.card{
+.scoreboard{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    font-size:36px;
+    font-weight:bold;
     background:white;
-    padding:20px;
+    padding:30px;
     border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
-    margin-bottom:20px;
+    margin-top:-40px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+.team-red{
+    color:#b22222;
+}
+
+.team-blue{
+    color:#0033a0;
 }
 
 .teams{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
+    gap:25px;
+    margin-top:30px;
 }
 
-.team{
+.card{
     background:white;
-    padding:20px;
+    padding:25px;
     border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    box-shadow:0 0 10px rgba(0,0,0,.1);
 }
 
-.team h2{
+.card h2{
     text-align:center;
 }
 
-ul{
-    line-height:1.8;
+ol{
+    line-height:2;
 }
 
-.format-grid{
+.formats{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+    gap:20px;
 }
 
 .format{
     background:white;
     padding:20px;
     border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
     text-align:center;
-}
-
-.standings{
-    text-align:center;
-    font-size:24px;
-    font-weight:bold;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#0b6b32;
+    background:#222;
     color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
 }
 
 @media(max-width:800px){
     .teams{
         grid-template-columns:1fr;
+    }
+
+    .scoreboard{
+        flex-direction:column;
+        gap:20px;
     }
 }
 </style>
@@ -92,36 +114,30 @@ footer{
 
 <body>
 
-<header>
-    <h1>🏆 SHIRE CUP 2026 🏆</h1>
-    <h2>October 1st • Wyndhurst Golf Club</h2>
-    <p>36 Holes • 16 Players • 2 Teams • 24 Total Points Available</p>
-</header>
-
-<section>
-
-<div class="card">
-    <h2>Event Overview</h2>
-
-    <p>
-        The Shire Cup is a 36-hole team golf competition featuring two
-        teams of eight players competing across six different formats.
-        Every point matters as Team Mike Downer battles Team Nick Greenleaf
-        for Shire Cup glory.
-    </p>
+<div class="hero">
+    <h1>THE SHIRE CUP</h1>
+    <h2>October 1, 2026 • Wyndhurst Golf Club</h2>
+    <p>36 Holes | 16 Players | 24 Points Available</p>
 </div>
 
-<div class="card standings">
-    Current Score<br>
-    Team Downer 0 - 0 Team Greenleaf
+<div class="section">
+
+<div class="scoreboard">
+    <div class="team-red">TEAM DOWNER<br>0</div>
+    <div>VS</div>
+    <div class="team-blue">0<br>TEAM GREENLEAF</div>
 </div>
+
+</div>
+
+<div class="section">
 
 <h1 style="text-align:center;">Team Rosters</h1>
 
 <div class="teams">
 
-<div class="team">
-<h2>Team Mike Downer</h2>
+<div class="card">
+<h2 class="team-red">Captain Mike Downer</h2>
 
 <ol>
 <li>Ian Roberts</li>
@@ -131,12 +147,13 @@ footer{
 <li>Sam Canfield</li>
 <li>Kelsey Williams</li>
 <li>Nate Armstrong</li>
-<li>Captain Mike Downer</li>
+<li>Mike Downer (Captain)</li>
 </ol>
+
 </div>
 
-<div class="team">
-<h2>Team Nick Greenleaf</h2>
+<div class="card">
+<h2 class="team-blue">Captain Nick Greenleaf</h2>
 
 <ol>
 <li>Carl Zurrin</li>
@@ -146,15 +163,20 @@ footer{
 <li>Phil Cohen</li>
 <li>James Forgett</li>
 <li>James Sena</li>
-<li>Captain Nick Greenleaf</li>
+<li>Nick Greenleaf (Captain)</li>
 </ol>
+
 </div>
 
 </div>
+
+</div>
+
+<div class="section">
 
 <h1 style="text-align:center;">Competition Formats</h1>
 
-<div class="format-grid">
+<div class="formats">
 
 <div class="format">
 <h3>2v2 Scramble</h3>
@@ -194,30 +216,32 @@ footer{
 
 </div>
 
-<div class="card">
-<h2>Points Breakdown</h2>
-
-<ul>
-<li>4 matches in each team format</li>
-<li>8 individual matches</li>
-<li>24 total points available</li>
-<li>Most points wins the Shire Cup</li>
-</ul>
-
 </div>
 
+<div class="section">
+
 <div class="card">
-<h2>Live Scoring</h2>
+<h2>Event Summary</h2>
 
 <p>
-Scores and match results will be added after pairings are announced.
+The Shire Cup is a Ryder Cup style team competition contested over
+36 holes at Wyndhurst Golf Club. Two teams of eight players battle
+through five team formats and individual match play to determine
+the annual champion.
 </p>
+
+<p>
+A total of 24 points are available throughout the day.
+The team with the most points at the end of competition claims
+the Shire Cup.
+</p>
+
 </div>
 
-</section>
+</div>
 
 <footer>
-    Shire Cup • Wyndhurst Golf Club • October 1, 2026
+Shire Cup • Wyndhurst Golf Club • October 1, 2026
 </footer>
 
 </body>
